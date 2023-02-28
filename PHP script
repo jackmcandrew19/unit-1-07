@@ -1,11 +1,16 @@
 <html>
 <body>
 
-<form action="welcome_get.php" method="get">
-Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
+<form method="GET">
+Name: <input type="text" name="name" required><br>
+E-mail: <input type="text" name="email" required><br>
 <input type="submit">
 </form>
-
+  <?php
+    if (isset($_GET['name'])) {
+      echo "Your Name is: " . $_GET['name'] . "\n";
+      echo "and your email is ". $_GET['email'];
+    }
+  ?>
 </body>
-</html> 
+</html>
